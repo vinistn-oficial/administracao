@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Respeito absoluto e igualdade",
+    "descricao": "Todos os administradores devem tratar os membros com respeito, independentemente da situação. Brincadeiras ofensivas, provocações, sarcasmo intencional, bullying, racismo, xenofobia, homofobia ou qualquer tipo de discriminação são terminantemente proibidos."
+  },
+  {
+    "titulo": "Proibição de abuso de poder",
+    "descricao": "Nenhum administrador deve usar seu cargo para ameaçar, reprimir ou constranger membros. A autoridade deve ser usada com responsabilidade, equilíbrio e ética."
+  },
+  {
+    "titulo": "Banimentos e remoções",
+    "descricao": "Banimentos imediatos só devem ser feitos em casos graves (spam, discurso de ódio, conteúdo ilegal). Em situações comuns, deve-se dialogar ou consultar outros administradores antes de tomar qualquer atitude."
+  },
+  {
+    "titulo": "Imparcialidade nas decisões",
+    "descricao": "Amizades, relacionamentos ou preferências pessoais não devem interferir em decisões administrativas. Todos os julgamentos devem ser neutros e justos."
+  },
+  {
+    "titulo": "Relacionamentos entre administradores",
+    "descricao": "Relacionamentos pessoais entre admins devem ser tratados com maturidade. Questões pessoais não devem afetar decisões administrativas e devem ser resolvidas no privado."
+  },
+  {
+    "titulo": "Conflitos entre administradores",
+    "descricao": "Desentendimentos entre administradores devem ser tratados com respeito e resolvidos em particular. Discussões públicas ou exposições dentro do grupo não são toleradas."
+  },
+  {
+    "titulo": "Promoções e rebaixamentos",
+    "descricao": "Nenhum admin pode promover ou rebaixar outro sem autorização do dono. Quebrar essa regra pode levar ao rebaixamento permanente."
+  },
+  {
+    "titulo": "Ausência prolongada",
+    "descricao": "Admins que precisarem se ausentar por longos períodos devem avisar previamente no grupo de administradores. Ausências sem aviso podem resultar em remoção do cargo."
+  },
+  {
+    "titulo": "Saída sem aviso prévio",
+    "descricao": "Sair do grupo por motivos bobos e sem comunicação demonstra falta de compromisso e pode acarretar a perda definitiva do cargo."
+  },
+  {
+    "titulo": "Divulgação responsável",
+    "descricao": "É bem-vindo divulgar o grupo em status, redes sociais e outros locais. Mas é proibido divulgar links de outros grupos sem a permissão do dono."
+  },
+  {
+    "titulo": "Participação nas decisões do grupo",
+    "descricao": "Admins devem participar de votações sobre nome, imagem ou descrição do grupo, especialmente em momentos de renovação ou campanhas."
+  },
+  {
+    "titulo": "Manter o grupo ativo",
+    "descricao": "Todos os admins devem ajudar a manter o grupo vivo, promovendo brincadeiras, interações, perguntas e bom humor no dia a dia."
+  },
+  {
+    "titulo": "Limite de marcações",
+    "descricao": "É permitido marcar o grupo até 3 vezes por dia (manhã, tarde e noite). Marcar mais que isso apenas se o grupo estiver muito parado ou for necessário."
+  },
+  {
+    "titulo": "Contribuição com ideias",
+    "descricao": "Admins devem propor melhorias, ideias de organização, estratégias de engajamento e novas dinâmicas para manter o grupo evoluindo."
+  },
+  {
+    "titulo": "Evite flood e spam",
+    "descricao": "Mesmo sendo admin, evite enviar mensagens repetitivas, links desnecessários ou exageros que atrapalhem o fluxo do grupo."
+  },
+  {
+    "titulo": "Responsabilidade com novas entradas",
+    "descricao": "Admins que adicionarem novos membros devem se certificar de que a pessoa conhece as regras e o propósito do grupo."
+  },
+  {
+    "titulo": "Evite assuntos sensíveis em excesso",
+    "descricao": "Assuntos como política, religião ou temas polêmicos devem ser tratados com cautela. Se possível, evitar para não gerar conflitos."
+  },
+  {
+    "titulo": "Organização do conteúdo",
+    "descricao": "Sempre que possível, incentive o uso de tópicos fixos ou mensagens organizadas para facilitar a comunicação e evitar bagunça."
+  },
+  {
+    "titulo": "Ajuda mútua entre admins",
+    "descricao": "Administradores devem apoiar uns aos outros, cobrindo ausências quando necessário e mantendo uma comunicação clara e respeitosa."
+  },
+  {
+    "titulo": "Comprometimento com o grupo",
+    "descricao": "Ser administrador não é apenas um cargo, é uma responsabilidade. Comprometimento, presença e boa vontade são esperados de todos."
+  }
+]

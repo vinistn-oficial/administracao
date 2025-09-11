@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔥sωєєτ нєℓℓ🔥 | Início</title>
+
+    <!-- Estilo Interno (exclusivo para a index) -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+
+      .logo a {
+        text-decoration: none;
+        font-size: 1.6em;
+        font-weight: bold;
+        color: white;
+      }
+
+      .nav-links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+        color: yellow;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: #4caf50;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.95em;
+      }
+
+      @media (max-width: 500px) {
+        header {
+          flex-direction: column;
+          height: auto;
+          gap: 10px;
+          padding: 15px;
+          text-align: center;
+        }
+
+        .nav-links {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-links a {
+          margin: 5px 10px;
+        }
+
+        .card {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#">🔥sωєєτ нєℓℓ🔥</a>
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card">
+        <h1>Bem-vindo(a)!</h1>
+        <p>
+          Clique no botão abaixo para visualizar as regras dos administradores
+          do grupo.
+        </p>
+        <button class="btn" onclick="window.location.href='admin-regras.html'">
+          Ver Regras
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Vinicius Santana. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
