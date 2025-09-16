@@ -1,158 +1,302 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔥sωєєτ нєℓℓ🔥 | Início</title>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Regras dos Admins</title>
+<style>
+  /* Reset simples */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fefae0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
-    <!-- Estilo Interno (exclusivo para a index) -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Header */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #264653;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 60px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  .logo a {
+    color: #2a9d8f;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  /* Menu desktop */
+  nav {
+    display: flex;
+    gap: 1.8rem;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #e9c46a;
+    color: #264653;
+    outline: none;
+  }
+
+  /* Botão Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 26px;
+    height: 22px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #2a9d8f;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Mobile Menu */
+  @media (max-width: 720px) {
+    nav {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      background: #264653;
+      width: 70%;
+      max-width: 280px;
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      flex-direction: column;
+      padding-top: 2rem;
+      gap: 1.5rem;
+      z-index: 998;
+      box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+    }
+    nav.open {
+      transform: translateX(0);
+    }
+    nav a {
+      font-size: 1.2rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  main {
+    flex: 1;
+    margin-top: 60px;
+    padding: 2.5rem 1rem 3rem;
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .intro h1 {
+    font-size: 2.8rem;
+    color: #264653;
+    margin-bottom: 0.5rem;
+  }
+  .intro p {
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* Cards */
+  .actions {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .card {
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(38, 70, 83, 0.15);
+    border-radius: 14px;
+    flex: 1 1 300px;
+    max-width: 320px;
+    padding: 2.2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(38, 70, 83, 0.25);
+    outline: none;
+  }
+  .card svg {
+    width: 50px;
+    height: 50px;
+    fill: #2a9d8f;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+  .card h2 {
+    font-size: 1.5rem;
+    color: #264653;
+    margin-bottom: 1rem;
+  }
+  .card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  .btn-primary {
+    background-color: #2a9d8f;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #1f706b;
+    outline: none;
+  }
+
+  footer {
+    background-color: #264653;
+    color: #cddcdc;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  /* Acessibilidade */
+  .card:focus-within {
+    outline: 3px solid #e9c46a;
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">Sweet Hell</a></div>
+  <nav id="nav" aria-label="Menu principal">
+    <a href="index.html" aria-current="page">Início</a>
+    <a href="admin-regras.html">Regras</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<main>
+  <section class="intro" aria-labelledby="main-title">
+    <h1 id="main-title">Bem-vindo(a) ao Sweet Hell</h1>
+    <p>Este é o espaço oficial para as regras e orientações dos administradores do nosso grupo de WhatsApp. Nossa missão é manter o grupo saudável, respeitoso e organizado para todos.</p>
+  </section>
+
+  <section class="actions" aria-label="Ações principais">
+    <article class="card" tabindex="0" role="button" onclick="window.location.href='admin-regras.html'" onkeypress="if(event.key==='Enter'){window.location.href='admin-regras.html'}">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+          10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      <h2>Ver Regras</h2>
+      <p>Confira as diretrizes que todos os administradores devem seguir para manter a harmonia no grupo.</p>
+      <a href="admin-regras.html" class="btn-primary" tabindex="-1">Acessar Regras</a>
+    </article>
+
+    <article class="card" tabindex="0" role="button" onclick="window.location.href='contato.html'" onkeypress="if(event.key==='Enter'){window.location.href='contato.html'}">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M21 8V7l-3 2-2-2-4 3-3-3-4 4v7h18v-5l-3-3z"/>
+      </svg>
+      <h2>Contato</h2>
+      <p>Precisa falar com o fundador ou tirar dúvidas? Entre em contato diretamente com a equipe responsável.</p>
+      <a href="contato.html" class="btn-primary" tabindex="-1">Fale Conosco</a>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Vinicius Santana. Todos os direitos reservados.
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+
+  // Fechar menu clicando fora no mobile
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
       }
+    }
+  });
+</script>
 
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 100vh;
-        background-color: #f5f5f5;
-        color: #333;
-      }
-
-      header {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-      }
-
-      .logo a {
-        text-decoration: none;
-        font-size: 1.6em;
-        font-weight: bold;
-        color: white;
-      }
-
-      .nav-links a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-        color: yellow;
-      }
-
-      main {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 20px;
-      }
-
-      .card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 30px;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      h1 {
-        color: #4caf50;
-        margin-bottom: 15px;
-      }
-
-      .btn {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: background-color 0.3s ease;
-      }
-
-      .btn:hover {
-        background-color: #45a049;
-      }
-
-      footer {
-        background-color: #4caf50;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        font-size: 0.95em;
-      }
-
-      @media (max-width: 500px) {
-        header {
-          flex-direction: column;
-          height: auto;
-          gap: 10px;
-          padding: 15px;
-          text-align: center;
-        }
-
-        .nav-links {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .nav-links a {
-          margin: 5px 10px;
-        }
-
-        .card {
-          padding: 20px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="logo">
-        <a href="#">🔥sωєєτ нєℓℓ🔥</a>
-      </div>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Sobre</a>
-        <a href="#">Serviços</a>
-        <a href="#">Contato</a>
-      </nav>
-    </header>
-
-    <main>
-      <div class="card">
-        <h1>Bem-vindo(a)!</h1>
-        <p>
-          Clique no botão abaixo para visualizar as regras dos administradores
-          do grupo.
-        </p>
-        <button class="btn" onclick="window.location.href='admin-regras.html'">
-          Ver Regras
-        </button>
-      </div>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Vinicius Santana. Todos os direitos reservados.</p>
-    </footer>
-  </body>
+</body>
 </html>
+
