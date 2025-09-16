@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Regras dos Administradores</title>
+  <title>Regras dos Administradores | Sweet Hell</title>
   <style>
-    /* Reset e base */
+    /* Reset */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -39,14 +39,13 @@
       font-weight: 700;
       text-decoration: none;
       user-select: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
     }
-    .nav-links {
+
+    nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
-    .nav-links a {
+    nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
@@ -54,21 +53,77 @@
       border-radius: 4px;
       transition: background-color 0.25s ease;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
+    nav a:hover,
+    nav a.active {
       background-color: #e9c46a;
       color: #264653;
       outline: none;
     }
 
-    /* Main Section */
-    section {
-      margin-top: 80px;
-      padding: 2rem 1rem;
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 26px;
+      height: 22px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: #2a9d8f;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background: #264653;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        flex-direction: column;
+        padding-top: 2rem;
+        gap: 1.5rem;
+        z-index: 998;
+        box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+      }
+      nav.open {
+        transform: translateX(0);
+      }
+      nav a {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    main {
+      flex: 1;
+      margin-top: 60px;
+      padding: 2.5rem 1rem 3rem;
       max-width: 900px;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
-      flex: 1;
     }
 
     .card {
@@ -76,106 +131,52 @@
       box-shadow: 0 8px 16px rgba(38, 70, 83, 0.15);
       border-radius: 14px;
       padding: 2.5rem 2rem;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
     }
 
-    h1 {
+    .card h1 {
+      font-size: 2rem;
       color: #264653;
+      text-align: center;
       margin-bottom: 1rem;
-      user-select: none;
-      font-weight: 700;
     }
 
-    p {
-      font-size: 1rem;
+    .card p {
+      text-align: center;
       color: #555;
-      line-height: 1.5;
-      user-select: none;
-      margin-bottom: 1.5rem;
-      max-width: 600px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
     }
 
-    /* Acordeon Regras */
-    .regra-item {
+    /* Acordeão */
+    .testimonial {
       border-top: 1px solid #ddd;
       padding: 1rem 0;
       cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      width: 100%;
-      max-width: 700px;
     }
-
-    .regra-item:first-child {
+    .testimonial:first-child {
       border-top: none;
     }
-
-    .regra-title {
-      font-weight: 700;
-      color: #2a9d8f;
-      font-size: 1.1rem;
+    .titulo-regra {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-
-    .regra-title:hover {
-      color: #e9c46a;
-    }
-
-    /* Ícone seta ao lado da regra */
-    .regra-title::after {
-      content: '▼';
-      font-size: 0.8rem;
-      transition: transform 0.3s ease;
       color: #2a9d8f;
-      margin-left: 8px;
+      font-weight: 600;
+      font-size: 1.05rem;
     }
-
-    /* Gira a seta quando ativo */
-    .regra-item.active .regra-title::after {
-      transform: rotate(180deg);
-      color: #e9c46a;
+    .titulo-regra .seta {
+      margin-left: 0.8rem;
+      color: #888;
+      font-size: 1.2rem;
     }
-
-    /* Conteúdo do acordeon */
-    .regra-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.3s ease;
+    .descricao-regra {
+      display: none;
+      padding-top: 0.6rem;
+      font-size: 0.95rem;
       color: #444;
-      margin-top: 0.5rem;
-      font-size: 1rem;
       line-height: 1.5;
-      padding-left: 1rem;
-      padding-top: 0;
-      width: 100%;
     }
 
-    /* Quando ativo, mostra o conteúdo com padding e max-height alto */
-    .regra-item.active .regra-content {
-      max-height: 1000px; /* suficiente para o conteúdo */
-      padding-top: 0.5rem;
-    }
-
-    /* Fundo ao passar o mouse */
-    .regra-item:hover {
-      background-color: #f0f4f8;
-      border-radius: 6px;
-    }
-
-    /* Footer */
     footer {
       background-color: #264653;
       color: #cddcdc;
@@ -184,91 +185,114 @@
       font-size: 0.9rem;
       user-select: none;
     }
-
-    /* Responsividade */
-    @media (max-width: 720px) {
-      header {
-        padding: 0 1rem;
-      }
-      section {
-        padding: 1.5rem 1rem;
-      }
-      .regra-item {
-        max-width: 100%;
-      }
-      .regra-content {
-        padding-left: 0.7rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html">SWEET HELL</a>
+
+<header>
+  <div class="logo"><a href="index.html">Sweet Hell</a></div>
+  <nav id="nav" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="admin-regras.html" class="active" aria-current="page">Regras</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<main>
+  <div class="card">
+    <h1>📜 Regras dos Administradores</h1>
+    <p>Clique em uma regra para expandir ou ocultar o conteúdo.</p>
+    <div id="regras-container">
+      <!-- Regras serão carregadas aqui via JS -->
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="admin-regras.html" class="active">Regras</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </header>
+  </div>
+</main>
 
-  <section>
-    <div class="card">
-      <h1>📜 Regras dos Administradores</h1>
-      <p>Clique em uma regra para expandir ou ocultar o conteúdo.</p>
+<footer>
+  &copy; 2025 Vinicius Santana. Todos os direitos reservados.
+</footer>
 
-      <div id="regras-container">
-        <!-- Regras carregadas via JS -->
-      </div>
-    </div>
-  </section>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
 
-  <footer>
-    <p>&copy; 2025 Vinicius Santana. Todos os direitos reservados.</p>
-  </footer>
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
 
-  <script>
-    // Função para carregar regras do JSON e montar acordeon
-    async function carregarRegras() {
-      try {
-        const response = await fetch('regras.json');
-        if (!response.ok) throw new Error('Falha ao carregar regras.');
-        const regras = await response.json();
+  // Fechar menu ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', false);
+    }
+  });
 
-        const container = document.getElementById('regras-container');
-        container.innerHTML = ''; // limpa container antes
+  // JS para carregar regras do JSON
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("regras-container");
 
-        regras.forEach((regra, index) => {
-          const item = document.createElement('div');
-          item.classList.add('regra-item');
+    fetch("regras.json")
+      .then((res) => res.json())
+      .then((regras) => {
+        regras.forEach((regra) => {
+          const box = document.createElement("div");
+          box.className = "testimonial";
 
-          const titulo = document.createElement('div');
-          titulo.classList.add('regra-title');
-          titulo.textContent = `${index + 1}. ${regra.titulo}`;
+          const titulo = document.createElement("div");
+          titulo.className = "titulo-regra";
 
-          const conteudo = document.createElement('div');
-          conteudo.classList.add('regra-content');
-          conteudo.textContent = regra.conteudo;
+          const texto = document.createElement("span");
+          texto.textContent = regra.titulo;
 
-          item.appendChild(titulo);
-          item.appendChild(conteudo);
-          container.appendChild(item);
+          const seta = document.createElement("span");
+          seta.className = "seta";
+          seta.textContent = "▼";
 
-          // Evento para abrir/fechar regra
-          titulo.addEventListener('click', () => {
-            item.classList.toggle('active');
+          titulo.appendChild(texto);
+          titulo.appendChild(seta);
+
+          const descricao = document.createElement("div");
+          descricao.className = "descricao-regra";
+          descricao.textContent = regra.descricao;
+
+          box.appendChild(titulo);
+          box.appendChild(descricao);
+          container.appendChild(box);
+
+          box.addEventListener("click", () => {
+            const isVisible = descricao.style.display === "block";
+
+            document.querySelectorAll(".testimonial").forEach(el => {
+              el.querySelector(".descricao-regra").style.display = "none";
+              el.querySelector(".seta").textContent = "▼";
+            });
+
+            if (!isVisible) {
+              descricao.style.display = "block";
+              seta.textContent = "▲";
+              setTimeout(() => {
+                box.scrollIntoView({ behavior: "smooth", block: "center" });
+              }, 100);
+            }
           });
         });
-      } catch (error) {
-        console.error(error);
-        document.getElementById('regras-container').textContent = 'Erro ao carregar regras.';
-      }
-    }
+      })
+      .catch((err) => {
+        container.innerHTML = "<p>Erro ao carregar as regras.</p>";
+        console.error("Erro ao carregar regras.json:", err);
+      });
+  });
+</script>
 
-    document.addEventListener('DOMContentLoaded', carregarRegras);
-  </script>
 </body>
 </html>
-
