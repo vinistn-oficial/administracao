@@ -4,53 +4,50 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("regras.json")
     .then((res) => res.json())
     .then((regras) => {
-      regras.forEach((regra, index) => {
-        const box = document.createElement("div");
-        box.className = "testimonial";
+      regras.forEach((regra) => {
+        // Cria o item de regra
+        const item = document.createElement("div");
+        item.className = "card regra-item";
 
-        const titulo = document.createElement("div");
-        titulo.className = "titulo-regra";
+        // Título (clicável)
+        const titulo = document.createElement("button");
+        titulo.className = "regra-titulo";
+        titulo.innerHTML = `
+          <span>${regra.titulo}</span>
+          <span class="seta">▼</span>
+        `;
+        titulo.setAttribute("aria-expanded", "false");
 
-        const texto = document.createElement("span");
-        texto.textContent = regra.titulo;
-
-        const seta = document.createElement("span");
-        seta.className = "seta";
-        seta.textContent = "▼";
-
-        titulo.appendChild(texto);
-        titulo.appendChild(seta);
-
+        // Conteúdo da descrição
         const descricao = document.createElement("div");
-        descricao.className = "descricao-regra";
+        descricao.className = "regra-descricao";
         descricao.textContent = regra.descricao;
         descricao.style.display = "none";
 
-        box.appendChild(titulo);
-        box.appendChild(descricao);
-        container.appendChild(box);
+        item.appendChild(titulo);
+        item.appendChild(descricao);
+        container.appendChild(item);
 
-        // Evento de clique para abrir/fechar regra
-        box.addEventListener("click", () => {
-          const isAlreadyOpen = descricao.style.display === "block";
+        // Evento de clique
+        titulo.addEventListener("click", () => {
+          const isOpen = titulo.getAttribute("aria-expanded") === "true";
 
           // Fecha todos
-          document.querySelectorAll(".testimonial").forEach((outroBox) => {
-            outroBox.classList.remove("expanded");
-            outroBox.querySelector(".descricao-regra").style.display = "none";
-            outroBox.querySelector(".seta").textContent = "▼";
+          document.querySelectorAll(".regra-item").forEach((outro) => {
+            outro.querySelector(".regra-descricao").style.display = "none";
+            outro.querySelector(".seta").textContent = "▼";
+            outro.querySelector("button").setAttribute("aria-expanded", "false");
           });
 
-          // Se não estava aberta antes, abre agora
-          if (!isAlreadyOpen) {
+          // Abre o clicado (se não estava aberto)
+          if (!isOpen) {
             descricao.style.display = "block";
-            box.classList.add("expanded");
-            seta.textContent = "▲";
+            titulo.querySelector(".seta").textContent = "▲";
+            titulo.setAttribute("aria-expanded", "true");
 
-            // Scroll suave e centralizado
             setTimeout(() => {
-              box.scrollIntoView({ behavior: "smooth", block: "center" });
-            }, 100); // Pequeno delay para o scroll funcionar após abrir
+              item.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 100);
           }
         });
       });
