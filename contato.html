@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🔥sωєєτ нєℓℓ🔥 | Contato</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">SWEET HELL</a>
+    </div>
+    <button id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav-links" role="navigation">
+      <a href="index.html">Início</a>
+      <a href="admin-regras.html">Regras</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contato</h1>
+      <p>Tem dúvidas ou precisa falar com a equipe? Use os canais abaixo:</p>
+
+      <form id="contactForm" action="#" method="post" novalidate>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" placeholder="Escreva sua mensagem" rows="5" required></textarea>
+
+        <button type="submit" class="btn-primary">Enviar</button>
+      </form>
+
+      <div class="contact-info">
+
+        <p><strong>WhatsApp:</strong> +55 79 9920-9607</p>
+      </div>
+    </section>
+  </main>
+<style>
+  /* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefae0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #264653;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 60px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.logo a {
+  color: #2a9d8f;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #e9c46a;
+  color: #264653;
+  outline: none;
+}
+
+/* Botão hamburguer */
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+  z-index: 1001;
+}
+#hamburger span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+#hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+#hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+#hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Navegação mobile */
+.nav-links.open {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background: #264653;
+  height: calc(100% - 60px);
+  width: 220px;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+.nav-links.open a {
+  font-size: 1.2rem;
+}
+
+/* Main */
+main {
+  flex: 1;
+  margin-top: 60px;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-section {
+  text-align: center;
+  user-select: none;
+}
+.welcome-section h1 {
+  font-size: 2rem;
+  color: #264653;
+  margin-bottom: 1rem;
+}
+.welcome-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Botões */
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2a9d8f;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #264653;
+}
+
+.btn-secondary {
+  background-color: #e9c46a;
+  color: #264653;
+}
+.btn-secondary:hover {
+  background-color: #d4b13e;
+}
+
+/* Contato */
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.contact-section h1 {
+  color: #264653;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-section label {
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #264653;
+  color: #cddcdc;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Responsividade */
+@media (max-width: 720px) {
+  header {
+    padding: 0 1rem;
+  }
+  main {
+    padding: 1.5rem 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  #hamburger {
+    display: flex;
+  }
+}
+
+</style>
+  <footer>
+    &copy; 2025 Vinicius Santana. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      alert('Mensagem enviada! Obrigado pelo contato.');
+      form.reset();
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        if (nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', false);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
