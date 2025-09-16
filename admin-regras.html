@@ -34,5 +34,151 @@
     <footer>
       <p>&copy; 2025 Vinicius Santana. Todos os direitos reservados.</p>
     </footer>
+    <style>
+      /* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefae0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #264653;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 60px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.logo a {
+  color: #2a9d8f;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #e9c46a;
+  color: #264653;
+  outline: none;
+}
+
+/* Main Section */
+section {
+  margin-top: 80px;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(38, 70, 83, 0.15);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+}
+
+h1 {
+  color: #264653;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  user-select: none;
+}
+
+/* Regras Accordion */
+.regra-item {
+  border-top: 1px solid #ddd;
+  padding: 1rem 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s ease;
+}
+.regra-item:first-child {
+  border-top: none;
+}
+.regra-title {
+  font-weight: 600;
+  color: #2a9d8f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.regra-title:hover {
+  color: #e9c46a;
+}
+.regra-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: #444;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding-left: 1rem;
+}
+.regra-item.active .regra-content {
+  max-height: 200px; /* o suficiente para mostrar o conteúdo */
+  padding-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #264653;
+  color: #cddcdc;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Responsividade */
+@media (max-width: 720px) {
+  header {
+    padding: 0 1rem;
+  }
+  section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+    </style>
   </body>
 </html>
