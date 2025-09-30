@@ -17,7 +17,7 @@
   },
   {
     "titulo": "Relacionamentos entre administradores",
-    "descricao": "Admins devem evitar se envolver com outros admins ou membros. mas se chegar a ocorrer, o relacionamento não pode interferir nas decisões do grupo. Problemas pessoais devem ser tratados no privado, com maturidade e respeito."
+    "descricao": "Admins devem evitar se envolver com outros admins ou membros. Mas, se chegar a ocorrer, o relacionamento não pode interferir nas decisões do grupo. Problemas pessoais devem ser tratados no privado, com maturidade e respeito."
   },
   {
     "titulo": "Conflitos entre administradores",
@@ -79,23 +79,8 @@
     "titulo": "Comprometimento com o grupo",
     "descricao": "Ser administrador não é apenas um cargo, é uma responsabilidade. Comprometimento, presença e boa vontade são esperados de todos."
   },
-   {
+  {
     "titulo": "Mensagem de Boas Vindas (config do gp)",
-    "descricao": "╭═──────═⌘═──────═╮
- |   🎉sєjα вєm-víndσ!🎉
- |「 ✦ #numerodele# ✦ 」
-╰═──────═⌘═──────═╯
-╭═──────═⌘═──────═╮
- | 🤵🏻‍♂️єntrσu, sє αprєsєntα:
- |
- |🤳 fσtσ:
- |✍️ nσmє:
- |🔞 ídαdє:
- |🚹 sєхσ:
-╰═──────═⌘═──────═╯
-╭═──────═⌘═──────═╮
- |❗lєíα αs rєgrαs pαrα єvítαr 
- |       вαnímєntσs
-╰═──────═⌘═──────═╯"
+    "descricao": "╭═──────═⌘═──────═╮\n |   🎉sєjα вєm-víndσ!🎉\n |「 ✦ #numerodele# ✦ 」\n╰═──────═⌘═──────═╯\n╭═──────═⌘═──────═╮\n | 🤵🏻‍♂️єntrσu, sє αprєsєntα:\n |\n |🤳 fσtσ:\n |✍️ nσmє:\n |🔞 ídαdє:\n |🚹 sєхσ:\n╰═──────═⌘═──────═╯\n╭═──────═⌘═──────═╮\n |❗lєíα αs rєgrαs pαrα єvítαr \n |       вαnímєntσs\n╰═──────═⌘═──────═╯"
   }
 ]
